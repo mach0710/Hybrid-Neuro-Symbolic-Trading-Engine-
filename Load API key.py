@@ -1,0 +1,5 @@
+import os
+from google.colab import userdata
+
+# Securely load the key
+os.environ["GOOGLE_API_KEY"] = userdata.get('GOOGLE_API_KEY') 

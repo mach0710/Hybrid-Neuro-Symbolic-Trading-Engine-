@@ -1,0 +1,22 @@
+# Simulate a trade request
+ticker = "TATASTEEL"
+market_data = {"price": 150.0, "volume_spike": True}
+prob = 0.8595  
+market_data["breakout_prob"] = prob
+
+initial_state = {
+    "ticker": ticker,
+    "market_data": market_data,
+    "technical_analysis": "",
+    "fundamental_analysis": "",
+    "risk_analysis": "",
+    "final_verdict": ""
+}
+
+print(f" Starting Analysis for {ticker} (ML Confidence: {prob:.2%})\n")
+result = app_graph.invoke(initial_state)
+
+print("\n" + "="*50)
+print("FINAL NEURO-SYMBOLIC VERDICT")
+print("="*50)
+print(result["final_verdict"])
